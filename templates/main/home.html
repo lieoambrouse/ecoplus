@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eco Plus - Sustainable Future</title>
@@ -9,7 +10,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            background-image: url(back.jpeg);
+            background-image: url("{% static 'img/back.jpeg' %}");
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
@@ -69,6 +70,7 @@
 </head>
 <body class="bg-green-100">
     
+    
     <nav class="bg-green-700 text-white p-4 flex justify-between items-center fixed top-0 left-0 w-full shadow-lg z-50">
         <h1 class="text-xl font-bold">Eco Puls</h1>
         <div class="hidden md:flex space-x-4">
@@ -109,7 +111,7 @@
         <h2 class="text-3xl font-bold text-green-800">Our Idea</h2>
         <br>
         <div class="flex justify-center">
-        <img src="Screenshot 2025-02-17 200043.jpg" alt="Eco Plus Logo" class="w-40 h-40 object-cover rounded-lg shadow-lg">
+        <img src="{% static 'img/Screenshot 2025-02-17 200043.jpg' %}"  alt="Eco Plus Logo" class="w-40 h-40 object-cover rounded-lg shadow-lg">
         </div>
         <p class="mt-4 text-gray-700">We believe in creating a greener planet by repurposing coconut jute into innovative products.</p>
     </section>
@@ -120,17 +122,17 @@
     <h2 class="text-3xl font-bold text-green-800 text-center">Our Team</h2>
     <div class="flex overflow-x-auto space-x-6 p-4 mt-6 scrollbar-hide justify-center" >
         <div class="bg-white p-6 shadow-lg rounded-lg flex flex-col items-center min-w-[250px]">
-            <img src="vinay_photo[1].jpg" class="w-32 h-32 rounded-full object-cover">
+            <img src="{% static 'img/vinay_photo[1].JPG' %}" class="w-32 h-32 rounded-full object-cover">
             <h3 class="text-xl font-bold mt-4">Budharaju Vinay</h3>
             <p class="text-gray-600">Founder & CEO</p>
         </div>
         <div class="bg-white p-6 shadow-lg rounded-lg flex flex-col items-center min-w-[250px]">
-            <img src="yathin sai.jpg" class="w-32 h-32 rounded-full object-cover">
+            <img src="{% static 'img/yathin sai.jpg' %}" class="w-32 h-32 rounded-full object-cover">
             <h3 class="text-xl font-bold mt-4">Bommisetty Yathin Sai</h3>
             <p class="text-gray-600">Co-Founder & COO</p>
         </div>
         <div class="bg-white p-6 shadow-lg rounded-lg flex flex-col items-center min-w-[250px]">
-            <img src="sarvesh.jpg" class="w-32 h-32 rounded-full object-cover">
+            <img src="{% static 'img/sarvesh.jpg' %}" class="w-32 h-32 rounded-full object-cover">
             <h3 class="text-xl font-bold mt-4">Sarvesh Raj M </h3>
             <p class="text-gray-600">Co-Founder & CMO</p>
         </div>
@@ -146,7 +148,7 @@
     <div class="flex overflow-x-auto space-x-6 p-4 mt-6 scrollbar-hide">
         <!-- Product 1 -->
         <div class="bg-white p-6 shadow-lg rounded-lg flex-shrink-0 w-64">
-            <img src="pot.jpg" class="w-full h-40 object-cover rounded-md">
+            <img src="{% static 'img/pot.jpg' %}" class="w-full h-40 object-cover rounded-md">
             <h3 class="text-xl font-bold mt-4">Coir Pot</h3>
             <p class="text-gray-600">Made from 100% recycled coconut jute.</p>
             <p class="text-green-700 font-bold text-lg mt-2">₹150</p>
@@ -155,7 +157,7 @@
         
         <!-- Product 2 -->
         <div class="bg-white p-6 shadow-lg rounded-lg flex-shrink-0 w-64">
-            <img src="coir_egg_tray[1].avif" class="w-full h-40 object-cover rounded-md">
+            <img src="{% static 'img/coir_egg_tray[1].avif' %}" class="w-full h-40 object-cover rounded-md">
             <h3 class="text-xl font-bold mt-4">Coir Egg Tray</h3>
             <p class="text-gray-600">Eco-friendly and durable egg tray.</p>
             <p class="text-green-700 font-bold text-lg mt-2">₹250</p>
@@ -164,7 +166,7 @@
 
         <!-- Product 3 -->
         <div class="bg-white p-6 shadow-lg rounded-lg flex-shrink-0 w-64">
-            <img src="coir_round_hanging_pot[1].jpg" class="w-full h-40 object-cover rounded-md">
+            <img src="{% static 'img/coir_round_hanging_pot[1].jpg' %}" alt="coir_round_hanging_pot[1].jpg" class="w-full h-40 object-cover rounded-md">
             <h3 class="text-xl font-bold mt-4">Coir Hanging Pot</h3>
             <p class="text-gray-600">Perfect for home gardens and also for home use.</p>
             <p class="text-green-700 font-bold text-lg mt-2">₹180</p>
@@ -172,7 +174,7 @@
         </div>
 
         <div class="bg-white p-6 shadow-lg rounded-lg flex-shrink-0 w-64">
-            <img src="gunny_bag_image[1].webp" class="w-full h-40 object-cover rounded-md">
+            <img src="{% static 'img/gunny_bag_image[1].webp' %}" alt="gunny_bag_image[1].webp" class="w-full h-40 object-cover rounded-md">
             <h3 class="text-xl font-bold mt-4">gunny bag</h3>
             <p class="text-gray-600">Made from 100% recycled coconut jute.</p>
             <p class="text-green-700 font-bold text-lg mt-2">₹150</p>

@@ -146,6 +146,27 @@ EMAIL_HOST_USER = "sit22cs087@sairamtap.edu.in"  # Replace with your Gmail
 EMAIL_HOST_PASSWORD = "ceuw pclk dpbn wdyt" # Use an App Password, not your real password
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER  # Use the same as EMAIL_HOST_USER
 
+import os
+
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
+# Media files (User-uploaded images)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Make sure this exists
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Add this
+    
+]
+
 
 
 
