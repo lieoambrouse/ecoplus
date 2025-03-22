@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Plus - Sustainable Future</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-image: url(back.jpeg);
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        /* Hide scrollbar but allow scrolling */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+    </style>
+    <script>
+        let cart = [];
+    
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCart();
+        }
+    
+        function updateCart() {
+            let cartItems = document.getElementById("cart-items");
+            let totalPrice = document.getElementById("total-price");
+            cartItems.innerHTML = "";
+    
+            let total = 0;
+            cart.forEach((item, index) => {
+                total += item.price;
+                cartItems.innerHTML += `<p>${item.name} - ₹${item.price} <button onclick="removeFromCart(${index})" class="text-red-500 ml-2">X</button></p>`;
+            });
+    
+            totalPrice.innerText = `Total: ₹${total}`;
+        }
+    
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+    
+        function checkout() {
+            if (cart.length === 0) {
+                alert("Your cart is empty!");
+                return;
+            }
+    
+            let items = cart.map(item => `${item.name} - ₹${item.price}`).join("\n");
+            let total = cart.reduce((sum, item) => sum + item.price, 0);
+    
+            alert(`Order Summary:\n${items}\nTotal: ₹${total}`);
+            cart = [];
+            updateCart();
+        }
+    </script>
+    
+</head>
+<body class="bg-green-100">
+    
+    <nav class="bg-green-700 text-white p-4 flex justify-between items-center fixed top-0 left-0 w-full shadow-lg z-50">
+        <h1 class="text-xl font-bold">Eco Puls</h1>
+        <div class="hidden md:flex space-x-4">
+            <a href="#about" class="px-4">About</a>
+            <a href="#team" class="px-4">Team</a>
+            <a href="#products" class="px-4">Products</a>
+            <a href="#contact" class="px-4">Contact</a>
+        </div>
+        <button id="mobile-menu-button" class="md:hidden text-white">☰</button>
+    </nav>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-green-700 text-white p-4 flex flex-col space-y-2 absolute top-16 left-0 w-full z-50">
+        <a href="#about" class="px-4">About</a>
+        <a href="#team" class="px-4">Team</a>
+        <a href="#products" class="px-4">Products</a>
+        <a href="#contact" class="px-4">Contact</a>
+    </div>
+
+    <script>
+        document.getElementById("mobile-menu-button").addEventListener("click", function() {
+            let menu = document.getElementById("mobile-menu");
+            menu.classList.toggle("hidden");
+        });
+    </script>
+    
+    <!-- Hero Section -->
+    <section class="h-screen flex items-center justify-center bg-cover bg-center mt-16" style="background-image: url('https://source.unsplash.com/1600x900/?nature,green');">
+        <div class="text-center text-white bg-green-900 bg-opacity-50 p-8 rounded-lg">
+            <h2 class="text-4xl font-bold">Sustainable Future with Coconut Jute</h2>
+            <p class="mt-4">Eco Plus creates eco-friendly products using coconut jute to reduce waste and promote sustainability.</p>
+            <a href="#contact" class="mt-4 inline-block bg-green-500 text-white px-6 py-2 rounded-full">Get in Touch</a>
+        </div>
+    </section>
+    
+    
+    <!-- About Section -->
+    <section id="about" class="p-10 text-center mt-16">
+        <h2 class="text-3xl font-bold text-green-800">Our Idea</h2>
+        <br>
+        <div class="flex justify-center">
+        <img src="Screenshot 2025-02-17 200043.jpg" alt="Eco Plus Logo" class="w-40 h-40 object-cover rounded-lg shadow-lg">
+        </div>
+        <p class="mt-4 text-gray-700">We believe in creating a greener planet by repurposing coconut jute into innovative products.</p>
+    </section>
+    
+    <!-- Team Section -->
+    <!-- Team Section -->
+<section id="team" class="p-10 bg-green-200 mt-16">
+    <h2 class="text-3xl font-bold text-green-800 text-center">Our Team</h2>
+    <div class="flex overflow-x-auto space-x-6 p-4 mt-6 scrollbar-hide justify-center" >
+        <div class="bg-white p-6 shadow-lg rounded-lg flex flex-col items-center min-w-[250px]">
+            <img src="vinay_photo[1].jpg" class="w-32 h-32 rounded-full object-cover">
+            <h3 class="text-xl font-bold mt-4">Budharaju Vinay</h3>
+            <p class="text-gray-600">Founder & CEO</p>
+        </div>
+        <div class="bg-white p-6 shadow-lg rounded-lg flex flex-col items-center min-w-[250px]">
+            <img src="yathin sai.jpg" class="w-32 h-32 rounded-full object-cover">
+            <h3 class="text-xl font-bold mt-4">Bommisetty Yathin Sai</h3>
+            <p class="text-gray-600">Co-Founder & COO</p>
+        </div>
+        <div class="bg-white p-6 shadow-lg rounded-lg flex flex-col items-center min-w-[250px]">
+            <img src="sarvesh.jpg" class="w-32 h-32 rounded-full object-cover">
+            <h3 class="text-xl font-bold mt-4">Sarvesh Raj M </h3>
+            <p class="text-gray-600">Co-Founder & CMO</p>
+        </div>
+    </div>
+</section>
+
+    
+    <!-- Products Section -->
+    <!-- Products Section -->
+<!-- Products Section -->
+<section id="products" class="p-10 text-center mt-16">
+    <h2 class="text-3xl font-bold text-green-800">Our Products</h2>
+    <div class="flex overflow-x-auto space-x-6 p-4 mt-6 scrollbar-hide">
+        <!-- Product 1 -->
+        <div class="bg-white p-6 shadow-lg rounded-lg flex-shrink-0 w-64">
+            <img src="pot.jpg" class="w-full h-40 object-cover rounded-md">
+            <h3 class="text-xl font-bold mt-4">Coir Pot</h3>
+            <p class="text-gray-600">Made from 100% recycled coconut jute.</p>
+            <p class="text-green-700 font-bold text-lg mt-2">₹150</p>
+            <button onclick="addToCart('Coir Pot', 150)" class="w-full bg-green-500 text-white px-4 py-2 mt-4 rounded">Add to Cart</button>
+        </div>
+        
+        <!-- Product 2 -->
+        <div class="bg-white p-6 shadow-lg rounded-lg flex-shrink-0 w-64">
+            <img src="coir_egg_tray[1].avif" class="w-full h-40 object-cover rounded-md">
+            <h3 class="text-xl font-bold mt-4">Coir Egg Tray</h3>
+            <p class="text-gray-600">Eco-friendly and durable egg tray.</p>
+            <p class="text-green-700 font-bold text-lg mt-2">₹250</p>
+            <button onclick="addToCart('Coir Egg Tray', 250)" class="w-full bg-green-500 text-white px-4 py-2 mt-4 rounded">Add to Cart</button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="bg-white p-6 shadow-lg rounded-lg flex-shrink-0 w-64">
+            <img src="coir_round_hanging_pot[1].jpg" class="w-full h-40 object-cover rounded-md">
+            <h3 class="text-xl font-bold mt-4">Coir Hanging Pot</h3>
+            <p class="text-gray-600">Perfect for home gardens and also for home use.</p>
+            <p class="text-green-700 font-bold text-lg mt-2">₹180</p>
+            <button onclick="addToCart('Coir Hanging Pot', 180)" class="w-full bg-green-500 text-white px-4 py-2 mt-4 rounded">Add to Cart</button>
+        </div>
+
+        <div class="bg-white p-6 shadow-lg rounded-lg flex-shrink-0 w-64">
+            <img src="gunny_bag_image[1].webp" class="w-full h-40 object-cover rounded-md">
+            <h3 class="text-xl font-bold mt-4">gunny bag</h3>
+            <p class="text-gray-600">Made from 100% recycled coconut jute.</p>
+            <p class="text-green-700 font-bold text-lg mt-2">₹150</p>
+            <button onclick="addToCart('Coir Pot', 150)" class="w-full bg-green-500 text-white px-4 py-2 mt-4 rounded">Add to Cart</button>
+        </div>
+    </div>
+</section>
+
+<!-- Shopping Cart -->
+<section id="cart" class="p-10 text-center bg-green-100 mt-10">
+    <h2 class="text-3xl font-bold text-green-800">Shopping Cart</h2>
+    <div id="cart-items" class="mt-4 text-gray-700"></div>
+    <p id="total-price" class="text-lg font-bold mt-4"></p>
+    <button onclick="checkout()" class="bg-green-700 text-white px-6 py-2 mt-4 rounded">Checkout</button>
+</section>
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="p-10 bg-green-100 text-center" >
+        <h2 class="text-3xl font-bold text-green-800">Contact Us</h2>
+        <form id="contact-form" class="mt-6 max-w-lg mx-auto bg-white p-6 shadow-lg rounded-lg flex flex-col space-y-4" action="{% url 'contact_form' %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Your Name" class="w-full p-3 border border-gray-300 rounded" required>
+            <input type="email" name="email" placeholder="Your Email" class="w-full p-3 border border-gray-300 rounded" required>
+            <textarea name="message" placeholder="Your Message" class="w-full p-3 border border-gray-300 rounded h-32" required></textarea>
+            <button type="submit" class="w-full bg-green-500 text-white p-3 rounded">Send Message</button>
+        </form>
+    
+   
+    
+   
