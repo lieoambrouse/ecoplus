@@ -140,3 +140,4 @@ python-decouple==3.8
 python-http-client==3.3.7
 python-json-logger==2.0.7
 pytz==2023.3.post1
+whitenoise
