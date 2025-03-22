@@ -72,7 +72,6 @@ hyperframe==5.2.0
 idna==2.10
 intel-openmp==2021.4.0
 ipykernel==6.29.4
-ipython==8.26.0
 isoduration==20.11.0
 itsdangerous==2.1.2
 jedi==0.19.1
